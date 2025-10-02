@@ -288,3 +288,568 @@ img {
     font-size: 18px;
   }
 }
+
+/* Features Section */
+.features-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.feature-graphic {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    #E4405F 0%, 
+    #FF6B6B 20%, 
+    #4ECDC4 40%, 
+    #45B7D1 60%, 
+    #96CEB4 80%, 
+    #FFEAA7 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    transparent 50%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 20px;
+}
+
+.white-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  min-width: 200px;
+}
+
+.logo-container {
+  position: relative;
+  z-index: 2;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto 15px;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.camera-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: #4ECDC4;
+  animation: float 3s ease-in-out infinite;
+}
+
+.clapper-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: #FF6B6B;
+  animation: float 3s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.feature-content {
+  padding-left: 40px;
+}
+
+.feature-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+.feature-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6b7280;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Responsive Design for Features Section */
+@media only screen and (max-width: 992px) {
+  .features-section {
+    padding: 60px 0;
+  }
+  
+  .feature-graphic {
+    height: 350px;
+    margin-bottom: 40px;
+  }
+  
+  .feature-content {
+    padding-left: 0;
+    text-align: center;
+  }
+  
+  .feature-title {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .feature-graphic {
+    height: 300px;
+  }
+  
+  .white-card {
+    padding: 30px 20px;
+    min-width: 180px;
+  }
+  
+  .logo-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .logo-text {
+    font-size: 20px;
+  }
+  
+  .feature-title {
+    font-size: 28px;
+  }
+  
+  .feature-description {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .features-section {
+    padding: 40px 0;
+  }
+  
+  .feature-graphic {
+    height: 250px;
+  }
+  
+  .white-card {
+    padding: 25px 15px;
+    min-width: 160px;
+  }
+  
+  .logo-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .logo-text {
+    font-size: 18px;
+  }
+  
+  .feature-title {
+    font-size: 24px;
+  }
+  
+  .camera-icon,
+  .clapper-icon {
+    font-size: 20px;
+  }
+}
+
+/* How to Download Section */
+.how-to-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #6b7280;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background: white;
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Card Image */
+.card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.flip-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.8) 0%, rgba(196, 135, 132, 0.8) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.input-demo, .download-demo {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+}
+
+.input-demo input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: #333;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.paste-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.download-btn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.cursor-icon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 24px;
+  color: white;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Card Content */
+.card-content {
+  padding: 25px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.step-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.step-description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Back Content */
+.back-content {
+  padding: 40px 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.back-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.back-content h4 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.back-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.step-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 48px;
+  font-weight: 700;
+  opacity: 0.2;
+  color: white;
+}
+
+/* Responsive Design for How to Section */
+@media only screen and (max-width: 992px) {
+  .how-to-section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 32px;
+  }
+  
+  .section-subtitle {
+    font-size: 16px;
+  }
+  
+  .flip-card {
+    height: 350px;
+  }
+  
+  .card-image {
+    height: 180px;
+  }
+  
+  .card-content {
+    height: 170px;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .flip-card {
+    height: 320px;
+  }
+  
+  .card-image {
+    height: 160px;
+  }
+  
+  .card-content {
+    height: 160px;
+    padding: 15px;
+  }
+  
+  .step-title {
+    font-size: 18px;
+  }
+  
+  .step-description {
+    font-size: 13px;
+  }
+  
+  .back-content {
+    padding: 30px 20px;
+  }
+  
+  .back-icon {
+    font-size: 40px;
+  }
+  
+  .back-content h4 {
+    font-size: 20px;
+  }
+  
+  .back-content p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .how-to-section {
+    padding: 40px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 40px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .section-subtitle {
+    font-size: 15px;
+  }
+  
+  .flip-card {
+    height: 300px;
+  }
+  
+  .card-image {
+    height: 150px;
+  }
+  
+  .card-content {
+    height: 150px;
+    padding: 15px;
+  }
+  
+  .overlay-content {
+    padding: 15px;
+  }
+  
+  .input-demo, .download-demo {
+    max-width: 200px;
+  }
+  
+  .download-btn {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+}
