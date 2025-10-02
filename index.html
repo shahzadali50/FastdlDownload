@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+     <!-- Custom CSS-->
+    <link rel="stylesheet" href="assets/css/color.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Fastdle</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <!-- main -->
+    <main>
+       <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Content Type Selectors -->
+                    <div class="content-types">
+                        <div class="content-type-item active" data-type="video">
+                            <i class="fa fa-play-circle"></i>
+                            <span>Video</span>
+                        </div>
+                        <div class="content-type-item" data-type="photo">
+                            <i class="fa fa-image"></i>
+                            <span>Photo</span>
+                        </div>
+                        <div class="content-type-item" data-type="reels">
+                            <i class="fa fa-film"></i>
+                            <span>Reels</span>
+                        </div>
+                        <div class="content-type-item" data-type="story">
+                            <i class="fa fa-clock-o"></i>
+                            <span>Story</span>
+                        </div>
+                        <div class="content-type-item" data-type="igtv">
+                            <i class="fa fa-television"></i>
+                            <span>IGTV</span>
+                        </div>
+                        <div class="content-type-item" data-type="carousel">
+                            <i class="fa fa-th"></i>
+                            <span>Carousel</span>
+                        </div>
+                        <div class="content-type-item" data-type="viewer">
+                            <i class="fa fa-eye"></i>
+                            <span>Viewer</span>
+                        </div>
+                    </div>
+
+                    <!-- Main Title -->
+                    <div class="banner-title">
+                        <h1>Instagram Downloader</h1>
+                        <p>Download Instagram Videos, Photos, Reels, IGTV & Carousel</p>
+                    </div>
+
+                    <!-- Input Section -->
+                    <div class="input-section">
+                        <div class="input-container">
+                            <input type="text" class="form-control" placeholder="Insert instagram link here" id="instagramUrl">
+                            <button class="btn btn-paste" id="pasteBtn">
+                                <i class="fa fa-clipboard"></i>
+                                Paste
+                            </button>
+                            <button class="btn btn-primary btn-download" id="downloadBtn">
+                                <i class="fa fa-download"></i>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </section>
+
+        
+      
+    </main>
+    <!-- footer -->
+    <footer>
+    </footer>
+    <!-- Bootstrap JS -->
+   <script src="assets/js/jquery-3.5.1.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   
+   <!-- Custom JavaScript -->
+   <script>
+   $(document).ready(function() {
+       // Content type selector functionality
+       $('.content-type-item').click(function() {
+           $('.content-type-item').removeClass('active');
+           $(this).addClass('active');
+       });
+       
+       // Paste button functionality
+       $('#pasteBtn').click(function() {
+           if (navigator.clipboard && window.isSecureContext) {
+               navigator.clipboard.readText().then(function(text) {
+                   $('#instagramUrl').val(text);
+               }).catch(function(err) {
+                   console.error('Failed to read clipboard contents: ', err);
+                   alert('Unable to access clipboard. Please paste manually.');
+               });
+           } else {
+               // Fallback for older browsers
+               $('#instagramUrl').focus();
+               alert('Please paste your Instagram link using Ctrl+V');
+           }
+       });
+       
+       // Download button functionality
+       $('#downloadBtn').click(function() {
+           var url = $('#instagramUrl').val().trim();
+           if (url === '') {
+               alert('Please enter an Instagram link first.');
+               $('#instagramUrl').focus();
+               return;
+           }
+           
+           // Basic URL validation
+           if (!url.includes('instagram.com')) {
+               alert('Please enter a valid Instagram link.');
+               $('#instagramUrl').focus();
+               return;
+           }
+           
+           // Here you would typically make an API call to your backend
+           alert('Download functionality would be implemented here. URL: ' + url);
+       });
+       
+       // Auto-focus on input when page loads
+       $('#instagramUrl').focus();
+   });
+   </script>
+</body>
+
+</html>
